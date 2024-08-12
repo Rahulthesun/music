@@ -1,0 +1,56 @@
+<style>
+    #main {
+        text-align: center;
+        margin-top: 5%;
+    }
+
+    #main h1 {
+        font-size: 40px;
+    }
+
+    form {
+        width: 25%;
+        margin: auto auto;
+    }
+
+    form p {
+        text-align: left;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    form button , form input[type="number"] , form select {
+        width: 100%;
+        font-size: 20px;
+        height: 40px;
+        border: 2px solid black;
+        margin-left: 0;
+    }
+
+    form button {
+        margin-top: 30px;
+    }
+</style>
+
+<body>  
+    <section id="main">
+        <h1>Music Data</h1>
+        <form method="get" action="{% url 'result' %}">
+            {% csrf_token %}
+            <p>Age:</p>
+            <input type="number" placeholder="Enter Your Age" name="age" required>
+            <p>Gender :</p>
+            <select id="gender" name="gender" required>
+                <option value="" selected>Select Gender</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+
+            <button type="submit">Submit Data</button>
+
+        </form>
+    </section>
+</body>
+
+
+
